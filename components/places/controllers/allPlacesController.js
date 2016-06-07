@@ -1,9 +1,7 @@
-app.controller('AllPlacesController', function($rootScope, PlacesService) {
-    var vm = this;
+app.controller('AllPlacesController', function($scope, $rootScope, PlacesService) {
     PlacesService.getAllPlaces()
         .success(function(data) {
-
-        vm.allPlaces = data.places;
+        $scope.allPlaces = data.places;
         })
         .error(function(data) {
             console.log(data);

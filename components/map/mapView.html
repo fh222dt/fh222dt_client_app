@@ -1,12 +1,19 @@
 <div id="map" data-ng-controller="MapController as mapCtrl">
 
 <ng-map center="59.474566, 17.751230" zoom="9">
+    <marker position="[59.474566, 17.751230]"></marker>
 
-      <marker position="{{place.latitude}}, {{place.longitude}}" ng-repeat="place in allPlaces"
+      <marker position="[{{place.latitude}}, {{place.longitude}}]" data-ng-repeat="place in allPlaces"
         on-click="mapCtrl.infoWindow(event, place)">
       </marker>
+    
 
-  
+  <!-- <info-window max-width="150" position="{{place.latitude}}, {{place.longitude}}">
+  <div>
+      <h2>{{mapCtrl.place.description}}</h2>
+      <div>{{ mapCtrl.place.address }}</div>
+  </div>
+  </info-window> -->
 </ng-map>
 
 </div>

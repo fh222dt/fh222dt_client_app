@@ -1,11 +1,10 @@
-app.controller('MapController', function(NgMap) {
-    var vm= this;
+app.controller('MapController', function($scope, NgMap) {
 
     NgMap.getMap().then(function(map) {
-        vm.map = map;
+        $scope.map = map;
   });
 
-  vm.infoWindow = function(event, place) {
+  $scope.infoWindow = function(event, place) {
 
-  }
+  };
 });
