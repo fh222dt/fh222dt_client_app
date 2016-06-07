@@ -3,7 +3,7 @@ app.config(//['$routeProvider', '$locationProvider',
         $routeProvider.
             when('/', {
                 templateUrl: 'components/places/views/allPlacesView.html',
-                controller: 'AllPlacesController',
+                // controller: 'AllPlacesController',
             }).
             when('/login', {
                 templateUrl: 'components/auth/loginView.html',

@@ -14,7 +14,7 @@
     </head>
     <body>
         <h1>Picknickkartan</h1>
-        <div class="container" >
+        <div class="container" data-ng-controller="AllPlacesController" >
             <p class="alert alert-success" data-ng-show="$root.isLoggedIn">Du är inloggad. <a href="#/logout">Logga ut?</a></p>
             <p class="alert alert-danger" data-ng-show="!$root.isLoggedIn">Du är inte inloggad. <a href="#/login">Logga in?</a></p>
 
