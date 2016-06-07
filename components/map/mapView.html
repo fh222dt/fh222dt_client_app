@@ -1,0 +1,12 @@
+<div id="map" data-ng-controller="MapController as mapCtrl">
+
+<ng-map center="59.474566, 17.751230" zoom="9">
+
+      <marker position="{{place.latitude}}, {{place.longitude}}" ng-repeat="place in allPlaces"
+        on-click="mapCtrl.infoWindow(event, place)">
+      </marker>
+
+  
+</ng-map>
+
+</div>

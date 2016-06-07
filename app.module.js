@@ -1,1 +1,1 @@
-var app = angular.module('picknickApp',['ngRoute']);
+var app = angular.module('picknickApp',['ngRoute', 'ngMap']);
