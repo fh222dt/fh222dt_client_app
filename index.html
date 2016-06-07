@@ -3,6 +3,7 @@
     <head>
         <title>Picknickkartan</title>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-route.js"></script>
         <!--styles  -->
         <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
             integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -10,11 +11,25 @@
     </head>
     <body>
         <h1>Picknickkartan</h1>
-        <div class="container" data-ng-controller="picknickController">
+        <div class="container">
+            <p class="alert alert-success" data-ng-show="$root.isLoggedIn">Du är inloggad. Logga ut?</p>
+            <p class="alert alert-danger" data-ng-show="!$root.isLoggedIn">Du är inte inloggad. Logga in?</p>
+
+            <div data-ng-view>Laddar...</div>
+
             <div>Map</div>
+            <div id="tags">
+                Länk för varje tag
+            </div>
             <div>Sök</div>
 
 
         </div>
+
+
+        <!--my own angular files  -->
+        <script src="app.module.js"></script>
+        <script src="app.routes.js"></script>
+        <script src="components/auth/LoginController.js"></script>
     </body>
 </html>
