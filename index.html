@@ -12,8 +12,8 @@
     <body>
         <h1>Picknickkartan</h1>
         <div class="container">
-            <p class="alert alert-success" data-ng-show="$root.isLoggedIn">Du är inloggad. Logga ut?</p>
-            <p class="alert alert-danger" data-ng-show="!$root.isLoggedIn">Du är inte inloggad. Logga in?</p>
+            <p class="alert alert-success" data-ng-show="$root.isLoggedIn">Du är inloggad. <a href="#/logout">Logga ut?</a></p>
+            <p class="alert alert-danger" data-ng-show="!$root.isLoggedIn">Du är inte inloggad. <a href="#/login">Logga in?</a></p>
 
             <div data-ng-view>Laddar...</div>
 
@@ -30,6 +30,7 @@
         <!--my own angular files  -->
         <script src="app.module.js"></script>
         <script src="app.routes.js"></script>
-        <script src="components/auth/LoginController.js"></script>
+        <script src="components/auth/loginController.js"></script>
+        <script src="components/auth/logoutController.js"></script>
     </body>
 </html>

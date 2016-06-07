@@ -1,5 +1,5 @@
 app.controller('LoginController', function($http, $rootScope) {
-
+    
     var vm = this;
 
     //rootscope for every controller to know if you are logged in or not
@@ -12,7 +12,7 @@ app.controller('LoginController', function($http, $rootScope) {
 
         var url = 'https://mapap-fh222dt.c9users.io/knock/auth_token';      //TODO move to config
         var config = {
-            "auth": {"email": vm.email, "password": vm.password},
+            "auth": {"email": vm.email, "password": vm.password},           //TODO sanera
             //"auth": { data },
             headers: {
                 "Content-Type" : "application/json"

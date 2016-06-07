@@ -10,7 +10,7 @@ app.config(//['$routeProvider', '$locationProvider',
             }).
             when('/logout', {
                 templateUrl: 'components/auth/logoutView.html',
-                controller: 'LogoutController as logout',
+                controller: 'LogoutController',
             }).
             otherwise({
                 redirectTo: '/'
