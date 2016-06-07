@@ -1,9 +1,10 @@
 app.config(//['$routeProvider', '$locationProvider',
     function($routeProvider, $locationProvider) {
         $routeProvider.
-            // when('/', {
-            //     templateUrl: ''
-            // }).
+            when('/', {
+                templateUrl: 'components/places/views/allPlacesView.html',
+                controller: 'AllPlacesController',
+            }).
             when('/login', {
                 templateUrl: 'components/auth/loginView.html',
                 controller: 'LoginController as login',
