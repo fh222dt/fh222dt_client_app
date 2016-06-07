@@ -7,16 +7,20 @@ app.controller('LoginController', function($http, $rootScope) {
 
     vm.login = function () {
         //input from user in the login form
-        var data = {'email': vm.email, 'password': vm.password};
-        console.log(data);
+        //var data = {'email': vm.email, 'password': vm.password};
+        //console.log(data);
 
         var url = 'https://mapap-fh222dt.c9users.io/knock/auth_token';      //TODO move to config
         var config = {
-            "auth": {"email": "frida@test.se", "password": "hejhej"}
+            "auth": {"email": vm.email, "password": vm.password},
+            //"auth": { data },
+            headers: {
+                "Content-Type" : "application/json"
+            }
         }
 
 
-        var promise = $http.post(url, data, config);
+        var promise = $http.post(url, config);
         //on success we logg in and store the token we get back
         promise.success(function(data, status, headers, config) {
             console.log(data);
