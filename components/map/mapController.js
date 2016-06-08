@@ -1,34 +1,26 @@
-app.controller('MapController', function(NgMap) {
+app.controller('MapController', function($scope, $rootScope, NgMap) {
     var vm = this;
+  NgMap.getMap().then(function(map) {
+    console.log('map', map);
+    vm.map = map;
+  });
 
-    NgMap.getMap().then(function(map) {
-        vm.map = map;
-    });
-
-    vm.showDetail = function (e, place) {
-          vm.place = place;
-          //vm.map.showInfoWindow('foo-iw', p.locationId);
-          vm.map.showInfoWindow('foo-iw', this);
-        };
-
-        vm.hideDetail = function () {
-           vm.map.hideInfoWindow('foo-iw');
-        };
-
-
-
-  // vm.showDetail = function(event, place) {
-  //     var infoWindow = new google.maps.infoWindow();
-  //     var center = new google.maps.LatLng(place.latitude, place.longitude);
-  //
-  //     infoWindow.setContent(
-  //         '<h3>Hej</h3>');
-  //
-  //   infoWindow.setPosition(center);
-  //   infoWindow.open(vm.objMapa);
-  //
-  //
-  //   //   vm.place = place;
-  //   //   vm.map.showInfoWindow('foo-iw', this);
+  // vm.clicked = function() {
+  //   alert('Clicked a link inside infoWindow');
   // };
+
+  // vm.shops = [
+  //   {id:'foo', name: 'FOO SHOP', position:[41,-87]},
+  //   {id:'bar', name: 'BAR SHOP', position:[42,-86]}
+  // ];
+  // vm.shop = vm.shops[0];
+
+  vm.showDetail = function(e, place) {
+    vm.place = place;
+    vm.map.showInfoWindow('foo-iw', this);
+  };
+
+  vm.hideDetail = function() {
+    vm.map.hideInfoWindow('foo-iw');
+  };
 });

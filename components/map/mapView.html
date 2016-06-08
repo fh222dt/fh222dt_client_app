@@ -1,27 +1,38 @@
 <div id="map" data-ng-controller="MapController as vm">
 
-<ng-map center="59.474566, 17.751230" zoom="9">
+<!-- <ng-map center="59.474566, 17.751230" zoom="9">
 
       <marker id="{{place.id}}"
           position="[{{place.latitude}}, {{place.longitude}}]"
           data-ng-repeat="place in places"
           on-click="vm.showDetail(place)">
       </marker>
-      <!-- <info-window id="foo-iw">
-           <div ng-non-bindable="">
-                id: <br/>
-                name: <br/>
-           </div>
-        </info-window> -->
+
+        <info-window id="foo-iw">
+            </info-window>
 
 
-  <!-- <info-window  id="foo-iw" max-width="150" position="[{{mapCtrl.place.latitude}}, {{mapCtrl.place.longitude}}]"> -->
-    <!-- <info-window id="foo-iw">
-        <div >
+</ng-map> -->
 
-          <p>hej!</p>
+<ng-map default-style="true" center="59.474566, 17.751230" zoom="9">
+      <marker id='{{place.id}}' position="[{{place.latitude}}, {{place.longitude}}]"
+        ng-repeat="place in places"
+        on-click="vm.showDetail(place)">
+      </marker>
+
+      <info-window id="foo-iw">
+        <div ng-non-bindable="">
+          <!-- id: {{vm.shop.id}}<br/>
+          name: {{vm.shop.name}}<br/>
+          Position 1: {{vm.shop.position}}<br/>
+          Position 2: {{anchor.getPosition()}}<br/>
+          Position 3: {{vm.map.markers[vm.shop.id].getPosition()}}<br/>
+          <a href="#" ng-click="vm.clicked()">Click Here</a> -->
+          hej!
         </div>
-    </info-window> -->
-</ng-map>
+      </info-window>
+    </ng-map>
+
+
 
 </div>
