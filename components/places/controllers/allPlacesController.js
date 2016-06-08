@@ -45,7 +45,6 @@ app.controller('AllPlacesController', function($scope, $rootScope, PlacesService
         $scope.places = data.places;    //TODO lägg t felmeddelande om det inte blir nåt resultat
         })
         .error(function(data) {
-
             console.log(data);
         });
     }

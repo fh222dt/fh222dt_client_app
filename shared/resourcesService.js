@@ -11,7 +11,7 @@ app.factory('ResourcesService', function($http, BASE_URL, API_KEY){
     }
 
     factory.postResource = function(resource, object, resourceParams, baseUrl, headers) {
-        var params = Object.assign({ key: API_KEY }, resourceParams);
+        var params = Object.assign({ api_key: API_KEY }, resourceParams);
         var url = baseUrl == undefined ? BASE_URL : baseUrl;
 
         return $http.post(url + resource, object, {
@@ -21,7 +21,7 @@ app.factory('ResourcesService', function($http, BASE_URL, API_KEY){
     }
 
     factory.deleteResource = function(resource, headers, baseUrl, resourceParams) {
-        var params = Object.assign({ key: API_KEY }, resourceParams);
+        var params = Object.assign({ api_key: API_KEY }, resourceParams);
         var url = baseUrl == undefined ? BASE_URL : baseUrl;
 
         return $http.delete(url + resource, {
@@ -31,11 +31,11 @@ app.factory('ResourcesService', function($http, BASE_URL, API_KEY){
     }
 
     factory.updateResource = function(resource, headers, object, baseUrl, resourceParams) {
-        var params = Object.assign({ key: API_KEY }, resourceParams);
+        var params = Object.assign({ api_key: API_KEY }, resourceParams);
         var url = baseUrl == undefined ? BASE_URL : baseUrl;
 
 
-        return $http.put(url + resource, payLoad, {
+        return $http.put(url + resource, object, {
           headers: headers,
           params: params
         });

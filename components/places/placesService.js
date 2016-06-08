@@ -13,12 +13,12 @@ app.factory('PlacesService', function(ResourcesService) {
         return ResourcesService.getResource('tags/' +id);
     };
 
-    factory.updatePlace = function (place, token, id) {
-        return ResourcesService.updateResource('places/', + id, {'Authorization' : token}, place);
+    factory.updatePlace = function (params, token, id) {
+        return ResourcesService.updateResource('places/' + id, {'Authorization' : token}, params);
     };
 
-    factory.createPlace = function (place, token) {
-        return ResourcesService.postResource('places/', place, {}, undefined, {'Authorization' : token});   //kolla alla params!
+    factory.createPlace = function (place, params, token) {
+        return ResourcesService.postResource('places', place, params, undefined, {'Authorization' : token});   //kolla alla params!
     };
 
     factory.deletePlace = function (id, token) {

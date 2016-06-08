@@ -13,6 +13,14 @@ app.config(//['$routeProvider', '$locationProvider',
                 templateUrl: 'components/auth/logoutView.html',
                 controller: 'LogoutController',
             }).
+            when('/create', {
+                templateUrl: 'components/places/views/createView.html',
+                controller: 'CreatePlaceController',
+            }).
+            when('/update', {
+                templateUrl: 'components/places/views/updateView.html',
+                controller: 'UpdatePlaceController',
+            }).
             otherwise({
                 redirectTo: '/'
             });
