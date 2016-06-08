@@ -9,8 +9,8 @@ app.factory('PlacesService', function(ResourcesService) {
         return ResourcesService.getResource('places/', {lat: lat, long: long}); //undrar om detta blir get params???
     };
 
-    factory.getPlacesByTag = function (tag) {
-        return ResourcesService.getResource('tags/' +tag.id);
+    factory.getPlacesByTag = function (id) {
+        return ResourcesService.getResource('tags/' +id);
     };
 
     factory.updatePlace = function (place, token, id) {

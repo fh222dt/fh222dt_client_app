@@ -1,12 +1,19 @@
 app.controller('AllPlacesController', function($scope, $rootScope, PlacesService, TagsService) {
-    PlacesService.getAllPlaces()
-        .success(function(data) {
-        $scope.allPlaces = data.places;
-        })
-        .error(function(data) {
-            console.log(data);
-        });
 
+    function getAll() {
+        PlacesService.getAllPlaces()
+            .success(function(data) {
+            $scope.places = data.places;
+            })
+            .error(function(data) {
+                console.log(data);
+            });
+    }
+
+    //get all places
+    getAll();
+
+    //get all tags
     TagsService.getAllTags()
         .success(function(data) {
         $scope.allTags = data.tags;
@@ -14,4 +21,22 @@ app.controller('AllPlacesController', function($scope, $rootScope, PlacesService
         .error(function(data) {
             console.log(data);
         });
+
+    //get places by tag
+    $scope.byTag = function (id) {
+        if(id === 'all') {
+            getAll();
+        }
+        else {
+            PlacesService.getPlacesByTag(id)
+            .success(function(data) {
+                console.log(data);
+            $scope.places = data.places;
+            })
+            .error(function(data) {
+                console.log(data);
+            });
+        }
+    }
+
 });
