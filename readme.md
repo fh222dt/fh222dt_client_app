@@ -3,7 +3,7 @@
 ### Installation
 För att kunna koppla upp sig mot APIet denna tjänst använder måste man följa instruktionerna [här](https://github.com/fh222dt/fh222dt_ror/blob/master/README.md) om hur man får igång API.et
 
-Ladda hem den senaste releasen från  APIrepot.
+Ladda hem den senaste releasen från [APIrepot](https://github.com/fh222dt/fh222dt_ror)
 
 Sedan laddar man hem senaste release från detta repo och kör lokalt i sin localhost eller liknande. Du måste använda en webbserver för att det ska fungera.
 
