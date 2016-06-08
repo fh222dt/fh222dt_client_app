@@ -30,13 +30,24 @@ app.controller('AllPlacesController', function($scope, $rootScope, PlacesService
         else {
             PlacesService.getPlacesByTag(id)
             .success(function(data) {
-                console.log(data);
             $scope.places = data.places;
             })
             .error(function(data) {
                 console.log(data);
             });
         }
+    }
+
+    //search
+    $scope.byQuery = function () {
+        PlacesService.queryPlaces($scope.search)
+        .success(function(data) {
+        $scope.places = data.places;    //TODO lägg t felmeddelande om det inte blir nåt resultat
+        })
+        .error(function(data) {
+
+            console.log(data);
+        });
     }
 
 });

@@ -21,10 +21,8 @@
             <div data-ng-view>Laddar...</div>
 
             <picknick-map></picknick-map>
-            <!-- <ng-map center="56.9996055, 13.0083493" zoom="8"></ng-map> -->
             <picknick-tags></picknick-tags>
-            <div>Sök</div>
-
+            <picknick-search></picknick-search>
 
         </div>
 
@@ -33,17 +31,21 @@
         <script src="app.routes.js"></script>
         <script src="app.constants.js"></script>
         <script src="shared/resourcesservice.js"></script>
+        <script src="shared/directives/searchDirective.js"></script>
+
 
         <script src="components/auth/loginController.js"></script>
         <script src="components/auth/logoutController.js"></script>
 
         <script src="components/places/controllers/AllPlacesController.js"></script>
         <script src="components/places/placesservice.js"></script>
+        <script src="components/places/tagsservice.js"></script>
+        <script src="components/places/tagDirective.js"></script>
+
 
         <script src="components/map/mapdirective.js"></script>
         <script src="components/map/mapcontroller.js"></script>
 
-        <script src="components/places/tagsservice.js"></script>
-        <script src="components/places/tagDirective.js"></script>
+
     </body>
 </html>

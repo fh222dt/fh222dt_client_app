@@ -25,6 +25,10 @@ app.factory('PlacesService', function(ResourcesService) {
         return ResourcesService.deleteResource('places/' + id, {'Authorization' : token});
     };
 
+    factory.queryPlaces = function(query) {
+        return ResourcesService.getResource('places/', { query: query });
+    };
+
     return factory;
 
 });
