@@ -1,6 +1,6 @@
 <div id="map" data-ng-controller="MapController as vm">
 
-<ng-map default-style="true" center="59.474566, 17.751230" zoom="9" on-click="vm.position()">
+<ng-map center="59.474566, 17.751230" zoom="9" on-click="vm.position()">
       <marker id='{{place.id}}' position="[{{place.latitude}}, {{place.longitude}}]"
         ng-repeat="place in places"
         on-click="vm.showDetail(place)"
