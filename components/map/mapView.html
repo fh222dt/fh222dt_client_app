@@ -1,34 +1,21 @@
 <div id="map" data-ng-controller="MapController as vm">
 
-<!-- <ng-map center="59.474566, 17.751230" zoom="9">
-
-      <marker id="{{place.id}}"
-          position="[{{place.latitude}}, {{place.longitude}}]"
-          data-ng-repeat="place in places"
-          on-click="vm.showDetail(place)">
-      </marker>
-
-        <info-window id="foo-iw">
-            </info-window>
-
-
-</ng-map> -->
-
-<ng-map default-style="true" center="59.474566, 17.751230" zoom="9">
+<ng-map default-style="true" center="59.474566, 17.751230" zoom="9" on-click="vm.position()">
       <marker id='{{place.id}}' position="[{{place.latitude}}, {{place.longitude}}]"
         ng-repeat="place in places"
-        on-click="vm.showDetail(place)">
+        on-click="vm.showDetail(place)"
+        icon="assets/img/basket.png">
       </marker>
+      <marker data-ng-show="$root.position"
+          position="[{{$root.position.lat}}, {{$root.position.long}}]"
+          icon="assets/img/basket-green.png"
+      ></marker>
+      <!-- icon from http://www.freepik.com  -->
 
       <info-window id="foo-iw">
         <div ng-non-bindable="">
-          <!-- id: {{vm.shop.id}}<br/>
-          name: {{vm.shop.name}}<br/>
-          Position 1: {{vm.shop.position}}<br/>
-          Position 2: {{anchor.getPosition()}}<br/>
-          Position 3: {{vm.map.markers[vm.shop.id].getPosition()}}<br/>
-          <a href="#" ng-click="vm.clicked()">Click Here</a> -->
-          hej!
+          <h4>{{vm.place.description}}</h4>
+          <p>{{vm.place.address}}</p>
         </div>
       </info-window>
     </ng-map>
