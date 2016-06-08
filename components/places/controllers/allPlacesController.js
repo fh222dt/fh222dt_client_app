@@ -49,4 +49,6 @@ app.controller('AllPlacesController', function($scope, $rootScope, PlacesService
         });
     }
 
+    //TODO hämta alla till en användare
+
 });

@@ -1,5 +1,5 @@
-app.controller('LoginController', function($http, $rootScope) {
-    
+app.controller('LoginController', function($http, $rootScope, BASE_URL, $location) {
+
     var vm = this;
 
     //rootscope for every controller to know if you are logged in or not
@@ -10,7 +10,7 @@ app.controller('LoginController', function($http, $rootScope) {
         //var data = {'email': vm.email, 'password': vm.password};
         //console.log(data);
 
-        var url = 'https://mapap-fh222dt.c9users.io/knock/auth_token';      //TODO move to config
+        var url = BASE_URL +'knock/auth_token';
         var config = {
             "auth": {"email": vm.email, "password": vm.password},           //TODO sanera
             //"auth": { data },
@@ -29,6 +29,7 @@ app.controller('LoginController', function($http, $rootScope) {
 
             $rootScope.token = data.jwt;
             $rootScope.isLoggedIn = true;
+            $location.path('/');
         });
 
         promise.error(function(data, status, headers, config) {
