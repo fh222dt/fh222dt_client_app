@@ -17,9 +17,13 @@ app.config(//['$routeProvider', '$locationProvider',
                 templateUrl: 'components/places/views/createView.html',
                 controller: 'CreatePlaceController',
             }).
-            when('/update', {
+            when('/update/:id', {
                 templateUrl: 'components/places/views/updateView.html',
                 controller: 'UpdatePlaceController',
+            }).
+            when('/delete/:id', {
+                templateUrl: 'components/places/views/deleteView.html',
+                controller: 'DeletePlaceController',
             }).
             otherwise({
                 redirectTo: '/'

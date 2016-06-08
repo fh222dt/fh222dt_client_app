@@ -1,1 +1,10 @@
 <a data-ng-show="$root.isLoggedIn" type="button" class="btn btn-info" href="#/create">Lägg till picknickplats</a>
+<button data-ng-click="myOwn=true" data-ng-show="$root.isLoggedIn" type="button" class="btn btn-info" >Ändra mina platser</button>
+<ul data-ng-show="myOwn" class="list-unstyled">
+    <li>Alla mina</li>
+    <li>platser...är allas just nu</li>
+    <li ng-repeat="place in places">
+        <a href="#/update/{{place.id}}">{{place.description}}</a>
+        <a href="#/delete/{{place.id}}" class="btn btn-danger btn-xs">Ta bort</a>
+    </li>
+</ul>

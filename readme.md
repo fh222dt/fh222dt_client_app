@@ -23,6 +23,6 @@ Jag har dokumenterat mina förändringar [här](https://github.com/fh222dt/fh222
 
 *Fult...Fick spara in lite på designen för att hinna med det här. (Har sparat in på mer än så som kanske märks...)
 
-*Kul! Använder gärna Angular igen, ska försöka testa 2an och se hur det skiljer sig.
+*Kul! Använder gärna Angular igen, ska försöka testa 2an och se hur de skiljer sig.
 
-*Validering av formulärdata har inte genomförts
+*Validering av formulärdata har inte genomförts pga tidsbrist

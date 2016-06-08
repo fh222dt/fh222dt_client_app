@@ -1,4 +1,4 @@
-app.controller('UpdatePlaceController', function($scope, $rootScope, PlacesService, $location, $routeParams) {
+app.controller('UpdatePlaceController', function($scope, $rootScope, PlacesService, $location, $routeParams, Flash) {
     var vm = this;
 
     if($rootScope.isLoggedIn === true) {
@@ -18,12 +18,11 @@ app.controller('UpdatePlaceController', function($scope, $rootScope, PlacesServi
 
             PlacesService.updatePlace(params, token, id)
             .success(function(data) {
-            //TODO ja ny plats lades till!
-            $location.path('/');
+                Flash.create('success', 'Platsen uppdaterades!');
+                $location.path('/');
             })
             .error(function(data) {
-                console.log(data);
-                //blev fel
+                Flash.create('warning', data.error);
             });
         }
     }

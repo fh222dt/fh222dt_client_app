@@ -1,4 +1,4 @@
-app.controller('AllPlacesController', function($scope, $rootScope, PlacesService, TagsService) {
+app.controller('AllPlacesController', function($scope, $rootScope, PlacesService, TagsService, Flash) {
 
     function getAll() {
         PlacesService.getAllPlaces()
@@ -6,7 +6,7 @@ app.controller('AllPlacesController', function($scope, $rootScope, PlacesService
             $scope.places = data.places;
             })
             .error(function(data) {
-                console.log(data);
+                Flash.create('warning', data.error);
             });
     }
 
@@ -19,7 +19,7 @@ app.controller('AllPlacesController', function($scope, $rootScope, PlacesService
         $scope.allTags = data.tags;
         })
         .error(function(data) {
-            console.log(data);
+            Flash.create('warning', data.error);
         });
 
     //get places by tag
@@ -33,7 +33,7 @@ app.controller('AllPlacesController', function($scope, $rootScope, PlacesService
             $scope.places = data.places;
             })
             .error(function(data) {
-                console.log(data);
+                Flash.create('warning', data.error);
             });
         }
     }
@@ -42,10 +42,14 @@ app.controller('AllPlacesController', function($scope, $rootScope, PlacesService
     $scope.byQuery = function () {
         PlacesService.queryPlaces($scope.search)
         .success(function(data) {
-        $scope.places = data.places;    //TODO lägg t felmeddelande om det inte blir nåt resultat
+            $scope.places = data.places;
+            console.log(data);
+            if($scope.places.length == 0) {
+                Flash.create('info', 'Sökningen gav inget resultat');
+            }
         })
         .error(function(data) {
-            console.log(data);
+            Flash.create('warning', data.error);
         });
     }
 

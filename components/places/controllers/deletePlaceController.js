@@ -1,4 +1,4 @@
-app.controller('DeletePlaceController', function($scope, $rootScope, PlacesService, $location, $routeParams) {
+app.controller('DeletePlaceController', function($scope, $rootScope, PlacesService, $location, $routeParams, Flash) {
     if($rootScope.isLoggedIn === true) {
 
         $scope.delete = function() {
@@ -8,13 +8,11 @@ app.controller('DeletePlaceController', function($scope, $rootScope, PlacesServi
 
             PlacesService.deletePlace(id, token)
             .success(function(data) {
-                console.log(data);
-            //TODO ja den togs bort!
-            $location.path('/');
+                Flash.create('success', 'Platsen togs bort!');
+                $location.path('/');
             })
             .error(function(data) {
-                console.log(data);
-                //blev fel
+                Flash.create('warning', data.error);
             });
         }
 

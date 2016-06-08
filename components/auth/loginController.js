@@ -1,4 +1,4 @@
-app.controller('LoginController', function($http, $rootScope, BASE_URL, $location) {
+app.controller('LoginController', function($http, $rootScope, BASE_URL, $location, Flash) {
 
     var vm = this;
 
@@ -23,9 +23,6 @@ app.controller('LoginController', function($http, $rootScope, BASE_URL, $locatio
         var promise = $http.post(url, config);
         //on success we logg in and store the token we get back
         promise.success(function(data, status, headers, config) {
-            console.log(data);
-            console.log(status);
-            console.log(config);
 
             $rootScope.token = data.jwt;
             $rootScope.isLoggedIn = true;
@@ -33,9 +30,7 @@ app.controller('LoginController', function($http, $rootScope, BASE_URL, $locatio
         });
 
         promise.error(function(data, status, headers, config) {
-            console.log(data);
-            console.log(status);
-            console.log(config);
+            Flash.create('warning', data.error);
 
             $rootScope.token = 'Det blev ett fel när du loggade in: ' +data.error;
             $rootScope.isLoggedIn = false;

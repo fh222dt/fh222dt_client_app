@@ -1,4 +1,4 @@
-app.controller('LogoutController', function($rootScope, $location) {
+app.controller('LogoutController', function($rootScope, $location, Flash) {
 
     var vm = this;
 
@@ -7,5 +7,6 @@ app.controller('LogoutController', function($rootScope, $location) {
     $rootScope.token = {};
 
     $location.path('/');
+    Flash.create('info', 'Du har loggats ut');
 
 });
