@@ -3,9 +3,9 @@
 ### Installation
 För att kunna koppla upp sig mot APIet denna tjänst använder måste man följa instruktionerna [här](https://github.com/fh222dt/fh222dt_ror/blob/master/README.md) om hur man får igång API.et
 
-Ladda hem den senaste releasen från repot.
+Ladda hem den senaste releasen från  APIrepot.
 
-Sedan kan man ladda hem hela denna katalog ´client_app´ och köra lokalt i sin localhost eller liknande. Du måste använda en webbserver för att det ska fungera.
+Sedan laddar man hem senaste release från detta repo och kör lokalt i sin localhost eller liknande. Du måste använda en webbserver för att det ska fungera.
 
 ### Funktionalitet
 Du kan söka i sökrutan på beskrivningar: 'mälaren' eller 'hamnen'
@@ -19,10 +19,10 @@ Jag har dokumenterat mina förändringar [här](https://github.com/fh222dt/fh222
 
 
 ### Efterklok
-*Jag har inte löpt linan helt ut i filstrukturen, är inte helt nöjd med directives på flera olika ställen. Men just nu kommer jag inte på något bättre.
+* Jag har inte löpt linan helt ut i filstrukturen, är inte helt nöjd med directives på flera olika ställen. Men just nu kommer jag inte på något bättre.
 
-*Fult...Fick spara in lite på designen för att hinna med det här. (Har sparat in på mer än så som kanske märks...)
+* Fult...Fick spara in lite på designen för att hinna med det här. (Har sparat in på mer än så som kanske märks...)
 
-*Kul! Använder gärna Angular igen, ska försöka testa 2an och se hur de skiljer sig.
+* Kul! Använder gärna Angular igen, ska försöka testa 2an och se hur de skiljer sig.
 
-*Validering av formulärdata har inte genomförts pga tidsbrist
+* Validering av formulärdata har inte genomförts pga tidsbrist
