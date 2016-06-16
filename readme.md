@@ -7,6 +7,8 @@ Ladda hem den senaste releasen från [APIrepot](https://github.com/fh222dt/fh222
 
 Sedan laddar man hem senaste release från detta repo och kör lokalt i sin localhost eller liknande. Du måste använda en webbserver för att det ska fungera.
 
+I filen app.constants.js kan man ändra API_KEY & BASE_URL till de värden man vill använda.
+
 ### Funktionalitet
 Du kan söka i sökrutan på beskrivningar: 'mälaren' eller 'hamnen'
 
