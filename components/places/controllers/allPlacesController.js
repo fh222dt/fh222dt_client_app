@@ -13,6 +13,11 @@ app.controller('AllPlacesController', function($scope, $rootScope, PlacesService
     //get all places
     getAll();
 
+    //reload all places when chanhes, deletes etc are made
+    $scope.$on('reloadPlaces', function() {
+        getAll();
+    });
+
     //get all tags
     TagsService.getAllTags()
         .success(function(data) {

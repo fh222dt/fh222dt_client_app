@@ -10,6 +10,7 @@ app.controller('DeletePlaceController', function($scope, $rootScope, PlacesServi
             .success(function(data) {
                 Flash.create('success', 'Platsen togs bort!');
                 $location.path('/');
+                $scope.$emit('reloadPlaces');
             })
             .error(function(data) {
                 Flash.create('warning', data.error);

@@ -20,6 +20,7 @@ app.controller('UpdatePlaceController', function($scope, $rootScope, PlacesServi
             .success(function(data) {
                 Flash.create('success', 'Platsen uppdaterades!');
                 $location.path('/');
+                $scope.$emit('reloadPlaces');
             })
             .error(function(data) {
                 Flash.create('warning', data.error);

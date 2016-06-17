@@ -17,8 +17,9 @@ app.controller('CreatePlaceController', function($scope, $rootScope, PlacesServi
 
             PlacesService.createPlace(place, params, token)
             .success(function(data) {
-            Flash.create('success', 'Platsen lades till!');
-            $location.path('/');
+                Flash.create('success', 'Platsen lades till!');
+                $location.path('/');
+                $scope.$emit('reloadPlaces');
             })
             .error(function(data) {
                 Flash.create('warning', data.error);
